@@ -22,6 +22,7 @@ app.get '/', (req, resp) ->
 
 	moose = JSON.stringify(params)
 	
+	console.log 'python python_bind.py \'' + moose + " \'"
 	
 	call_me_up    = exec 'python python_bind.py \'' + moose + " \'", (error, stdout, stderr) ->
 		console.log error
