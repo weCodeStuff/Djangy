@@ -2,7 +2,14 @@ express 	= require "express"
 exec  = require('child_process').exec
 app			= express.createServer()
 
+django_templates = require "django_templates"
+
+express.view.register('.html', django_templates)
+app.set('views', __dirname + '/templates');
+app.set("view options", { layout: false })
+
 app.get '/', (req, resp) ->
+
 	params 	= {}
 	params["settings"]	= {}
 	params["context"]	= {}
@@ -22,5 +29,8 @@ app.get '/', (req, resp) ->
 		resp.send stdout
 	
 	#resp.send moose
-
+	
+	
+	#resp.render "index.html", {"yo": "dawg"}
+	
 app.listen 2999
