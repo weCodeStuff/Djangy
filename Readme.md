@@ -1,5 +1,9 @@
 this is a really early release to render django templates in node.
 
+Please install Python (duh) and Django before running this package
+
+
+
 some sample code:
 
   djangy = require("djangy");
