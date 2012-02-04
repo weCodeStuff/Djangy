@@ -1,22 +1,29 @@
-this is a really early release to render django templates in node.
+# Djangy : Node.js binder for django templates
 
-Please install Python (duh) and Django before running this package
+### what is this about?
 
 
+Django templates are awesome, and probably one of the more mature template engines. Node is aweomse too but we missed the django template engine.
 
-some sample code:
+This solves the problem, a simple binding to render django templates including partials and return HTML back to node, ready to be sent to the client
 
-  djangy = require("djangy");
+### how to install?
+     	1. install Python (obvious!)
+     	2. install Django (pip install django / easy_install django)
+     	3. npm install djangy (or install it globally if you like this a lot <3 )
 
-console.log();
+#### how to use?
+ 		please see the test directory 
+ 
+#### Broken Stuff
+		1. no support for custom tags :/
+		2. really bad error handling
+		3. zero tests, really horrible
+		4. no documentation
+	
+		this is probably not ready yet for production use
 
-djangy.config({"template_path": __dirname + "/templates/" });
+### Wanna Help?
+			Fork away!!! 
 
-djangy.render("index.htm",{}, function(data) {
-  console.log(data);
-	}
-	);
-
-more example code in the test folder.
-
-made by Max Presman (max@presman.ca) and Amsul Naeem (reach@amsul.ca)
+#### this night project was made by Max Presman (max@presman.ca) and Amsul Naeem (reach@amsul.ca)
