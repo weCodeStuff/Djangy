@@ -1,0 +1,24 @@
+{
+  "name": "djangy",
+  "description": "Render Django Templates from within node.js / express.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/weCodeStuff/Djangy",
+  "contributors": [
+    "Max Presman <max@presman.ca>",
+    "Amsul Naeem <read@amsul.ca>"
+  ],
+  "main": "lib/djangy.js",
+  "directories": {
+    "lib": "./lib"
+  },
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/weCodeStuff/Django-Templates-Node-Connector.git"
+  }
+}
