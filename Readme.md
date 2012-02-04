@@ -26,4 +26,4 @@ This solves the problem, a simple binding to render django templates including p
 ### Wanna Help?
 			Fork away!!! 
 
-#### this night project was made by Max Presman (max@presman.ca) and Amsul Naeem (reach@amsul.ca)
+#### this night project was made by  [Max Presman](https://github.com/maxpresman)  (max@presman.ca) and  [Amsul Naeem](https://github.com/amsul) (reach@amsul.ca)
