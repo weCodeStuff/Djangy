@@ -1,6 +1,6 @@
-express 	= require "express"
-exec  = require('child_process').exec
-app			= express.createServer()
+express 			= require "express"
+child_proc  		= require('child_process')
+app					= express.createServer()
 
 django_templates = require "django_templates"
 
@@ -20,18 +20,19 @@ app.get '/', (req, resp) ->
 	params["context"]["sexi_stuff"]			= "moose"
 	params["context"]["make_me_awesome"]	= "Wtf_yo"
 
-	moose = JSON.stringify(params)
+	json_string = JSON.stringify(params)
+	json_buffer = new Buffer json_string
+	#json_string = encodeURIComponent(json_string)
 	
-	console.log 'python python_bind.py \'' + moose + " \'"
+	python_child = child_proc.spawn "python" , ["python_bind.py"]
 	
-	call_me_up    = exec 'python python_bind.py \'' + moose + " \'", (error, stdout, stderr) ->
-		console.log error
+	python_child.stdin.write(json_buffer)
+	python_child.stdin.end()
 	
-		resp.send stdout
+	python_child.stderr.on "data", (data) ->
+		resp.send data.toString()
 	
-	#resp.send moose
-	
-	
-	#resp.render "index.html", {"yo": "dawg"}
+	python_child.stdout.on "data", (data) ->
+		resp.send data.toString()
 	
 app.listen 2999

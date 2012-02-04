@@ -7,8 +7,9 @@ settings.configure(DEBUG=False)
 
 if __name__ == "__main__":
 	##get the stuff sent from other languages
-	data_array 	= sys.argv[1]
+	data_array 	= sys.stdin.read()
 	data_array	= json.loads(data_array)
+	
 	
 	if "debug_mode" in data_array["settings"] and data_array["settings"]["debug_mode"]:
 		settings.DEBUG = True
